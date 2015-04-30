@@ -3,6 +3,8 @@ import sys
 
 if sys.platform == 'darwin':
     libzbar = cdll.LoadLibrary('libzbar.dylib')
+elif sys.platform == 'win32':
+    libzbar = cdll.LoadLibrary('libzbar-0.dll')
 else:
     libzbar = cdll.LoadLibrary('libzbar.so.0')
 
